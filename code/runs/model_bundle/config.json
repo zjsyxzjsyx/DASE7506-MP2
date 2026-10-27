@@ -1,0 +1,29 @@
+{
+  "probes": [
+    {
+      "input": "centered",
+      "model": "linear",
+      "l2": 10.0
+    },
+    {
+      "input": "raw",
+      "model": "linear",
+      "l2": 10.0
+    }
+  ],
+  "probe_train": "all",
+  "groups": [
+    "answer",
+    "vote",
+    "surface",
+    "reasoning",
+    "cross"
+  ],
+  "similarity": null,
+  "interactions": false,
+  "boost": null,
+  "rank_l2": 1.0,
+  "rank_train": "hard",
+  "folds": 5,
+  "seed": 7506
+}

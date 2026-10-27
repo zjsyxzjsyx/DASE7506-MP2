@@ -1,0 +1,550 @@
+first candidate                              val-hard  54.9 [49.9,60.0]  val-all  78.2  train-hard-cv None
+shortest                                     val-hard  40.8 [35.8,46.2]  val-all  73.7  train-hard-cv None
+longest                                      val-hard  60.6 [55.5,65.6]  val-all  82.5  train-hard-cv None
+majority                                     val-hard  69.0 [63.9,73.8]  val-all  86.2  train-hard-cv None
+majority+valid                               val-hard  73.5 [68.5,78.0]  val-all  88.2  train-hard-cv None
+votes+answer (no text, no emb)               val-hard  72.7 [67.9,77.5]  val-all  87.8  train-hard-cv 69.9
+votes+answer+surface                         val-hard  75.5 [71.3,79.7]  val-all  89.1  train-hard-cv 72.3
+votes+answer+reasoning                       val-hard  74.4 [69.9,78.9]  val-all  88.6  train-hard-cv 73.6
+all handcrafted - cross (no emb)             val-hard  76.6 [72.1,80.8]  val-all  89.6  train-hard-cv 74.6
+all handcrafted (no emb)                     val-hard  79.4 [75.2,83.4]  val-all  90.9  train-hard-cv 76.9
+probe only (+votes via lse)                  val-hard  80.6 [76.3,84.8]  val-all  91.4  train-hard-cv 80.7
+probe+votes+answer                           val-hard  83.7 [80.0,87.3]  val-all  92.7  train-hard-cv 80.9
+single probe, no cross                       val-hard  84.2 [80.6,87.9]  val-all  93.0  train-hard-cv 81.3
+single probe, no cross - surface             val-hard  84.5 [80.6,88.2]  val-all  93.1  train-hard-cv 81.2
+single probe, no cross - reasoning           val-hard  83.7 [80.0,87.3]  val-all  92.7  train-hard-cv 80.7
+single probe, no cross + similarity(raw)     val-hard  84.2 [80.6,87.9]  val-all  93.0  train-hard-cv 81.6
+single probe, no cross, probe trained on hard val-hard  83.9 [80.0,87.6]  val-all  92.9  train-hard-cv 80.3
+single probe, no cross, ranker trained on all val-hard  84.2 [80.6,87.9]  val-all  93.0  train-hard-cv 81.3
+single probe: linear raw                     val-hard  83.1 [79.2,87.0]  val-all  92.5  train-hard-cv 81.1
+single probe: linear raw+centered concat     val-hard  83.4 [79.4,87.0]  val-all  92.6  train-hard-cv 81.0
+single probe: MLP centered h=16              val-hard  84.8 [81.1,88.5]  val-all  93.2  train-hard-cv 82.5
+single probe: listwise centered              val-hard  81.1 [76.9,85.1]  val-all  91.6  train-hard-cv 76.7
+single probe (with cross)                    val-hard  84.2 [80.6,87.9]  val-all  93.0  train-hard-cv 81.7
+ensemble: centered + raw, no cross           val-hard  84.5 [80.6,88.2]  val-all  93.1  train-hard-cv 82.5
+ensemble: centered + MLP                     val-hard  85.1 [81.4,88.5]  val-all  93.4  train-hard-cv 83.3
+ensemble: centered + listwise                val-hard  84.5 [80.8,88.2]  val-all  93.1  train-hard-cv 81.3
+ensemble: all four, no cross                 val-hard  85.4 [81.7,88.7]  val-all  93.5  train-hard-cv 82.8
+ensemble: all four                           val-hard  85.1 [81.4,88.5]  val-all  93.4  train-hard-cv 83.3
+handcrafted + n-gram text probe (no emb)     val-hard  80.6 [76.3,84.8]  val-all  91.4  train-hard-cv 78.1
+default + n-gram text probe                  val-hard  85.4 [81.7,89.0]  val-all  93.5  train-hard-cv 83.1
+default + n-gram text probe (words only)     val-hard  85.4 [81.7,88.7]  val-all  93.5  train-hard-cv 82.7
+default + vote-pattern interactions          val-hard  84.8 [81.1,88.2]  val-all  93.2  train-hard-cv 82.6
+default + boosted trees d3                   val-hard  85.4 [81.7,89.0]  val-all  93.5  train-hard-cv 82.8
+default + boosted trees d2                   val-hard  85.6 [82.3,89.0]  val-all  93.6  train-hard-cv 82.9
+default + interactions + boosted trees d3    val-hard  85.1 [81.4,88.7]  val-all  93.4  train-hard-cv 82.4
+full (default)                               val-hard  85.4 [81.7,89.0]  val-all  93.5  train-hard-cv 83.0
+probe argmax (no cluster lse)                val-hard  80.0 [75.5,84.2]  val-all  91.1  train-hard-cv None
+seeds single probe, no cross                       val-hard 84.5±0.3  cv 81.9±0.1
+seeds single probe (with cross)                    val-hard 84.0±0.4  cv 82.3±0.1
+seeds ensemble: centered + raw, no cross           val-hard 84.7±0.1  cv 82.6±0.2
+seeds ensemble: centered + MLP                     val-hard 84.8±0.4  cv 83.2±0.2
+seeds ensemble: all four, no cross                 val-hard 84.9±0.5  cv 82.6±0.5
+seeds ensemble: all four                           val-hard 85.0±0.3  cv 83.3±0.4
+seeds handcrafted + n-gram text probe (no emb)     val-hard 80.5±0.3  cv 78.2±0.1
+seeds default + n-gram text probe                  val-hard 85.4±0.2  cv 82.9±0.2
+seeds default + vote-pattern interactions          val-hard 85.6±0.5  cv 83.2±0.2
+seeds default + boosted trees d3                   val-hard 85.2±0.1  cv 83.0±0.2
+seeds default + boosted trees d2                   val-hard 85.6±0.3  cv 83.1±0.3
+seeds default + interactions + boosted trees d3    val-hard 85.1±0.2  cv 83.2±0.3
+seeds full (default)                               val-hard 85.2±0.3  cv 82.9±0.2
+{
+  "calibration_val_hard": [
+    {
+      "conf_lo": 0.3813573718070984,
+      "conf_hi": 0.7048673033714294,
+      "mean_conf": 0.5810861377648904,
+      "acc": 59.154929577464785,
+      "n": 71
+    },
+    {
+      "conf_lo": 0.7048673033714294,
+      "conf_hi": 0.8701963901519776,
+      "mean_conf": 0.7929019617362761,
+      "acc": 78.87323943661971,
+      "n": 71
+    },
+    {
+      "conf_lo": 0.8701963901519776,
+      "conf_hi": 0.9509642958641052,
+      "mean_conf": 0.9167417858687925,
+      "acc": 91.54929577464789,
+      "n": 71
+    },
+    {
+      "conf_lo": 0.9509642958641052,
+      "conf_hi": 0.9898237466812134,
+      "mean_conf": 0.9748891902641511,
+      "acc": 97.1830985915493,
+      "n": 71
+    },
+    {
+      "conf_lo": 0.9898237466812134,
+      "conf_hi": 0.9999992847442627,
+      "mean_conf": 0.9975859497634458,
+      "acc": 100.0,
+      "n": 71
+    }
+  ],
+  "mcnemar_vs_full": {
+    "majority": {
+      "only_full_right": 75,
+      "only_other_right": 17,
+      "p": 7.292898576420451e-10
+    },
+    "majority+valid": {
+      "only_full_right": 61,
+      "only_other_right": 19,
+      "p": 2.7318699228822653e-06
+    },
+    "all handcrafted (no emb)": {
+      "only_full_right": 38,
+      "only_other_right": 17,
+      "p": 0.006455803109956637
+    },
+    "probe only (+votes via lse)": {
+      "only_full_right": 22,
+      "only_other_right": 5,
+      "p": 0.0015137195587158203
+    },
+    "single probe, no cross": {
+      "only_full_right": 10,
+      "only_other_right": 6,
+      "p": 0.454498291015625
+    },
+    "ensemble: centered + raw, no cross": {
+      "only_full_right": 7,
+      "only_other_right": 4,
+      "p": 0.548828125
+    }
+  },
+  "vote_patterns": {
+    "(2, 1, 1)": {
+      "n": 88,
+      "majority": 54.0,
+      "full": 69.0
+    },
+    "(1, 1, 1, 1)": {
+      "n": 20,
+      "majority": 5.0,
+      "full": 14.0
+    },
+    "(2, 1)": {
+      "n": 28,
+      "majority": 24.0,
+      "full": 25.0
+    },
+    "(2, 2)": {
+      "n": 34,
+      "majority": 14.0,
+      "full": 29.0
+    },
+    "(3, 1)": {
+      "n": 151,
+      "majority": 129.0,
+      "full": 139.0
+    },
+    "(1, 1, 1)": {
+      "n": 20,
+      "majority": 11.0,
+      "full": 16.0
+    },
+    "(1, 1)": {
+      "n": 14,
+      "majority": 8.0,
+      "full": 11.0
+    }
+  },
+  "probe_logit_vs_log_len_corr": 0.06976396911641529,
+  "seed_check": {
+    "single probe, no cross": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        83.94366197183099,
+        84.50704225352112,
+        84.22535211267605,
+        84.78873239436619,
+        84.78873239436619
+      ],
+      "train_hard_cv": [
+        82.02459791863765,
+        81.83538315988646,
+        82.07190160832545,
+        81.97729422894986,
+        81.83538315988646
+      ],
+      "val_hard_mean": 84.45070422535211,
+      "val_hard_std": 0.32850433210395785,
+      "cv_mean": 81.94891201513718,
+      "cv_std": 0.09740425866591682
+    },
+    "single probe (with cross)": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        83.66197183098592,
+        84.78873239436619,
+        83.94366197183099,
+        83.94366197183099,
+        83.66197183098592
+      ],
+      "train_hard_cv": [
+        82.40302743614002,
+        82.16650898770104,
+        82.45033112582782,
+        82.40302743614002,
+        82.26111636707664
+      ],
+      "val_hard_mean": 84.0,
+      "val_hard_std": 0.4139982663858859,
+      "cv_mean": 82.3368022705771,
+      "cv_std": 0.10619651996520328
+    },
+    "ensemble: centered + raw, no cross": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        84.50704225352112,
+        84.78873239436619,
+        84.50704225352112,
+        84.78873239436619,
+        84.78873239436619
+      ],
+      "train_hard_cv": [
+        82.40302743614002,
+        82.97067171239357,
+        82.82876064333018,
+        82.45033112582782,
+        82.45033112582782
+      ],
+      "val_hard_mean": 84.67605633802816,
+      "val_hard_std": 0.13799942212863045,
+      "cv_mean": 82.62062440870389,
+      "cv_std": 0.2328956220452447
+    },
+    "ensemble: centered + MLP": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        85.07042253521126,
+        84.50704225352112,
+        85.35211267605634,
+        84.78873239436619,
+        84.22535211267605
+      ],
+      "train_hard_cv": [
+        83.25449385052033,
+        82.97067171239357,
+        83.58561967833491,
+        83.20719016083254,
+        83.20719016083254
+      ],
+      "val_hard_mean": 84.78873239436619,
+      "val_hard_std": 0.3983700175698879,
+      "cv_mean": 83.24503311258277,
+      "cv_std": 0.19709239977293835
+    },
+    "ensemble: all four, no cross": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        84.22535211267605,
+        85.63380281690141,
+        85.07042253521126,
+        84.50704225352112,
+        85.07042253521126
+      ],
+      "train_hard_cv": [
+        82.07190160832545,
+        83.25449385052033,
+        83.01797540208136,
+        82.78145695364239,
+        82.11920529801324
+      ],
+      "val_hard_mean": 84.90140845070422,
+      "val_hard_std": 0.4911435429341628,
+      "cv_mean": 82.64900662251657,
+      "cv_std": 0.4762426849064601
+    },
+    "ensemble: all four": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        84.78873239436619,
+        84.78873239436619,
+        85.63380281690141,
+        84.78873239436619,
+        85.07042253521126
+      ],
+      "train_hard_cv": [
+        82.82876064333018,
+        83.44370860927152,
+        83.86944181646169,
+        83.30179754020813,
+        83.01797540208136
+      ],
+      "val_hard_mean": 85.01408450704226,
+      "val_hard_std": 0.32850433210396224,
+      "cv_mean": 83.29233680227057,
+      "cv_std": 0.35950804162724703
+    },
+    "handcrafted + n-gram text probe (no emb)": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        80.28169014084507,
+        80.28169014084507,
+        80.28169014084507,
+        81.12676056338029,
+        80.56338028169014
+      ],
+      "train_hard_cv": [
+        78.1929990539262,
+        78.28760643330179,
+        78.240302743614,
+        77.95648060548723,
+        78.240302743614
+      ],
+      "val_hard_mean": 80.50704225352112,
+      "val_hard_std": 0.32850433210396224,
+      "cv_mean": 78.18353831598864,
+      "cv_std": 0.11740467025535009
+    },
+    "default + n-gram text probe": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        85.63380281690141,
+        85.35211267605634,
+        85.35211267605634,
+        85.07042253521126,
+        85.35211267605634
+      ],
+      "train_hard_cv": [
+        82.92336802270577,
+        82.7341532639546,
+        83.30179754020813,
+        82.92336802270577,
+        82.63954588457901
+      ],
+      "val_hard_mean": 85.35211267605634,
+      "val_hard_std": 0.178156487896811,
+      "cv_mean": 82.90444654683066,
+      "cv_std": 0.22705771050141266
+    },
+    "default + vote-pattern interactions": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        85.35211267605634,
+        85.63380281690141,
+        85.07042253521126,
+        86.47887323943661,
+        85.63380281690141
+      ],
+      "train_hard_cv": [
+        83.30179754020813,
+        82.87606433301798,
+        83.11258278145695,
+        83.11258278145695,
+        83.49101229895932
+      ],
+      "val_hard_mean": 85.63380281690141,
+      "val_hard_std": 0.47135776142764546,
+      "cv_mean": 83.17880794701986,
+      "cv_std": 0.2064089331056884
+    },
+    "default + boosted trees d3": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        85.35211267605634,
+        85.35211267605634,
+        85.07042253521126,
+        85.07042253521126,
+        85.35211267605634
+      ],
+      "train_hard_cv": [
+        83.01797540208136,
+        82.63954588457901,
+        83.25449385052033,
+        83.06527909176916,
+        82.82876064333018
+      ],
+      "val_hard_mean": 85.2394366197183,
+      "val_hard_std": 0.13799942212863045,
+      "cv_mean": 82.96121097445601,
+      "cv_std": 0.2102754093745718
+    },
+    "default + boosted trees d2": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        85.91549295774648,
+        85.63380281690141,
+        85.07042253521126,
+        85.91549295774648,
+        85.63380281690141
+      ],
+      "train_hard_cv": [
+        83.39640491958372,
+        82.92336802270577,
+        83.44370860927152,
+        83.11258278145695,
+        82.78145695364239
+      ],
+      "val_hard_mean": 85.63380281690141,
+      "val_hard_std": 0.3085760887353064,
+      "cv_mean": 83.13150425733208,
+      "cv_std": 0.25840114065747316
+    },
+    "default + interactions + boosted trees d3": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        85.07042253521126,
+        85.07042253521126,
+        85.07042253521126,
+        85.35211267605634,
+        84.78873239436619
+      ],
+      "train_hard_cv": [
+        83.49101229895932,
+        82.97067171239357,
+        83.30179754020813,
+        82.78145695364239,
+        83.53831598864711
+      ],
+      "val_hard_mean": 85.07042253521126,
+      "val_hard_std": 0.178156487896811,
+      "cv_mean": 83.2166508987701,
+      "cv_std": 0.2952599155028779
+    },
+    "full (default)": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "val_hard": [
+        85.63380281690141,
+        85.35211267605634,
+        85.35211267605634,
+        84.78873239436619,
+        85.07042253521126
+      ],
+      "train_hard_cv": [
+        82.97067171239357,
+        82.78145695364239,
+        83.25449385052033,
+        82.92336802270577,
+        82.5922421948912
+      ],
+      "val_hard_mean": 85.2394366197183,
+      "val_hard_std": 0.28726870499114426,
+      "cv_mean": 82.90444654683066,
+      "cv_std": 0.21903191869044675
+    }
+  },
+  "ranker_weights_raw_scale": {
+    "parsable": 0.0,
+    "integer": 6.15568733215332,
+    "nonneg": 5.723955154418945,
+    "log_abs": 0.024639923125505447,
+    "in_question": 0.5288593173027039,
+    "is_question_max": -0.09031412750482559,
+    "vote_count": -0.05975859612226486,
+    "vote_share": -0.23891475796699524,
+    "n_clusters": -7.028873369563371e-06,
+    "is_top_cluster": 0.21884389221668243,
+    "singleton": -0.186409592628479,
+    "log_len": 0.6153541803359985,
+    "len_z": -0.05080749839544296,
+    "n_lines": 0.35670357942581177,
+    "n_display_math": -0.10745015740394592,
+    "n_headers": -0.22310340404510498,
+    "n_bold": 0.11980727314949036,
+    "n_checks": 0.27818167209625244,
+    "n_errors": -0.4760180711746216,
+    "err_rate": -0.9687578082084656,
+    "q_coverage": 3.064894914627075,
+    "answer_derived": -0.16649486124515533,
+    "approx": -1.5630213022232056,
+    "hedge": 0.17869608104228973,
+    "impossible": 0.16965694725513458,
+    "n_boxed": -0.3321831524372101,
+    "mine_in_others": 0.40877363085746765,
+    "mine_result_in_others": -0.99817955493927,
+    "others_in_mine": 1.1774182319641113,
+    "others_result_in_mine": -0.26534149050712585,
+    "p0": 0.18570995330810547,
+    "p0_rel": 0.18571586906909943,
+    "p1": 0.14598166942596436,
+    "p1_rel": 0.31291860342025757
+  },
+  "total_seconds": 740.9588765000226
+}
+exit=0

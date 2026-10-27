@@ -1,0 +1,106 @@
+{
+  "protocol": "dase7506-mp2-open-hard-verifier-v5",
+  "frozen_config": {
+    "probes": [
+      {
+        "input": "centered",
+        "model": "linear",
+        "l2": 10.0
+      },
+      {
+        "input": "raw",
+        "model": "linear",
+        "l2": 10.0
+      }
+    ],
+    "probe_train": "all",
+    "groups": [
+      "answer",
+      "vote",
+      "surface",
+      "reasoning",
+      "cross"
+    ],
+    "similarity": null,
+    "interactions": false,
+    "boost": null,
+    "rank_l2": 1.0,
+    "rank_train": "hard",
+    "folds": 5,
+    "seed": 7506
+  },
+  "source_sha256": {
+    "submission.py": "e1be2ac07193d0bf7302bab031c909603193e686828ccaab666df3f73753b162",
+    "model.py": "27d4c95deae6b9bdcef3fea855051ae3273821042b5fb76e31aa939d9855e19c",
+    "features.py": "e1cc7e4e8f1714c7a39e9f38b286e96ff966bf1b011d0a396920b16acd1b5249",
+    "textmodel.py": "4baddd7c7172d47055ff866b55155013be015fbbc6fb50ef8ff8632248428655",
+    "train.py": "0cd1f8ead0752f3efa079f3a112253bcb79922bc7aa1402ee3ee4bfd32801afd",
+    "experiments.py": "388899b7df7676c505b0e0ae27beb3153550b76ecf054e37aa7628e5c54b0bf4",
+    "requirements.txt": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "predict.py": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
+    "score_predictions.py": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960"
+  },
+  "official_files_match_package_manifest": true,
+  "inference_assets": {
+    "runs/model_bundle/config.json": {
+      "bytes": 458,
+      "sha256": "d2fd1db4d6f244750951a5df2ab958663b2d04da73b387349792933a77ecc656"
+    },
+    "runs/model_bundle/weights.npz": {
+      "bytes": 9858,
+      "sha256": "c0e4d448dcf945e0e25a2b892b09f309bf9d69a889f12e3fb5b618f58ef267ce"
+    }
+  },
+  "inference_assets_total_bytes": 10316,
+  "inference_assets_total_mib": 0.009838104248046875,
+  "training": {
+    "files": {
+      "config.json": {
+        "bytes": 458,
+        "sha256": "d2fd1db4d6f244750951a5df2ab958663b2d04da73b387349792933a77ecc656"
+      },
+      "weights.npz": {
+        "bytes": 9858,
+        "sha256": "c0e4d448dcf945e0e25a2b892b09f309bf9d69a889f12e3fb5b618f58ef267ce"
+      }
+    },
+    "total_bytes": 10316,
+    "train_seconds": 2.6798473999951966,
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "machine": "AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD"
+  },
+  "validation_score": {
+    "correct": 746,
+    "n": 798,
+    "accuracy": 93.48370927318295
+  },
+  "test_score": {
+    "correct": 390,
+    "n": 467,
+    "accuracy": 83.5117773019272
+  },
+  "timing_test_bank_external_seconds": {
+    "predict_process": 0.683,
+    "score_process": 0.124,
+    "total": 0.807,
+    "runner_prediction_seconds": 0.5608712999965064,
+    "scoring_seconds": 0.01831700000911951
+  },
+  "threads": {
+    "OMP_NUM_THREADS": 4,
+    "OPENBLAS_NUM_THREADS": 4,
+    "MKL_NUM_THREADS": 4
+  },
+  "hardware": "AMD Ryzen 7 9800X3D 8-Core Processor (local); reference machine is Xeon Platinum 8457C",
+  "os": "Windows-11-10.0.26100-SP0",
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "commands": [
+    "python train.py",
+    "python predict.py --method submission.py --checkpoint runs/model_bundle --split test --output runs/test-predictions.json",
+    "python score_predictions.py --split test --predictions runs/test-predictions.json --output runs/test-score.json"
+  ],
+  "test_runs": 1
+}

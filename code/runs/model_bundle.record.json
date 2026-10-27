@@ -1,0 +1,17 @@
+{
+  "files": {
+    "config.json": {
+      "bytes": 458,
+      "sha256": "d2fd1db4d6f244750951a5df2ab958663b2d04da73b387349792933a77ecc656"
+    },
+    "weights.npz": {
+      "bytes": 9858,
+      "sha256": "c0e4d448dcf945e0e25a2b892b09f309bf9d69a889f12e3fb5b618f58ef267ce"
+    }
+  },
+  "total_bytes": 10316,
+  "train_seconds": 2.6798473999951966,
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "machine": "AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD"
+}

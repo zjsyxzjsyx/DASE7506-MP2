@@ -2,6 +2,16 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
-runs/
 .DS_Store
 Thumbs.db
+
+# Word/Office lock files created while a .docx is open
+~$*
+
+# console copies of test-predictions.json / test-score.json
+/code/runs/test-predict.log
+/code/runs/test-score.log
+
+# default make_figures.py output (titled, tinted); the report uses report/figures/paper/
+/report/figures/*.png
+/report/figures/*.pdf
