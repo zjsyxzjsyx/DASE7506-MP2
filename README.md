@@ -43,10 +43,10 @@ python check_data.py
 
 `requirements.txt` pins `numpy==2.5.3`, the only dependency for training and inference. The figures also need `pip install -r requirements-report.txt`, which adds `matplotlib==3.11.2`.
 
-**Windows.** Git's `core.autocrlf=true` converts the data files' line endings on checkout, and `check_data.py` then fails with a hash mismatch. Clone with the conversion turned off:
+**Windows.** `check_data.py` compares the data files byte for byte with their recorded hashes, so a line-ending conversion breaks it. This repository's `.gitattributes` marks `code/data/**` as `-text`, so Git never converts those files and a normal clone passes, whatever `core.autocrlf` is set to. The original course repository has no such file. A Windows clone of it with `core.autocrlf=true` fails the check unless conversion is turned off:
 
 ```bash
-git clone -c core.autocrlf=false <this repository's URL>
+git clone -c core.autocrlf=false <course repository URL>
 ```
 
 ## Reproduce the test score without retraining
