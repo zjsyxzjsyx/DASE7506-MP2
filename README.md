@@ -78,7 +78,7 @@ Training is deterministic: seed 7506, full-batch, CPU only, about 3 s. It writes
 | `runs/model_bundle/config.json` | 458 | `d2fd1db4d6f244750951a5df2ab958663b2d04da73b387349792933a77ecc656` |
 | `runs/model_bundle/weights.npz` | 9,858 | `c0e4d448dcf945e0e25a2b892b09f309bf9d69a889f12e3fb5b618f58ef267ce` |
 
-Submitted code version: commit [hash to be added after commit].
+Submitted code version: commit `b3a1d38a708cf6e0570ad755bc5f12ca83297a27` on branch `mp2-submission`; the checkpoint is `code/runs/model_bundle/` in that commit.
 
 ## Reproduce the report's numbers
 
